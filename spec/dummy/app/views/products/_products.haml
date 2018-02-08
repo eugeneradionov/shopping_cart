@@ -1,0 +1,4 @@
+- @products.in_groups_of(4, false) do |group|
+  .row
+    - group.each do |product|
+      = render product
