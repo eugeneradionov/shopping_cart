@@ -2,7 +2,6 @@ require_dependency "shopping_cart/application_controller"
 
 module ShoppingCart
   class OrdersController < ApplicationController
-    # before_action :authenticate_user!
 
     load_resource only: :show
 

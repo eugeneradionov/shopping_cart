@@ -35,7 +35,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'transactional_capybara', '~> 0.2.0'
   s.add_development_dependency 'database_cleaner', '~> 1.6', '>= 1.6.1'
   s.add_development_dependency 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
-  s.add_development_dependency 'dotenv-rails', '~> 2.2', '>= 2.2.1'
   s.add_development_dependency 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
   s.add_development_dependency 'ffaker', '~> 2.6'
   s.add_development_dependency 'sqlite3'

@@ -6,7 +6,6 @@ module ShoppingCart
     before_action :initialize_checkout
     before_action :initialize_cart
     before_action :set_order_cart
-    # authorize_resource
 
     def new
       @order.order_items = @cart.order_items
@@ -54,12 +53,6 @@ module ShoppingCart
       else
         @shipping_a = @order.shipping_address || ShippingAddress.new
       end
-
-      # begin
-      #   @shipping_a = ShippingAddress.find(user_info.shipping_address_id)
-      # rescue NoMethodError
-      #   @shipping_a = @order.shipping_address || ShippingAddress.new
-      # end
     end
 
     def set_billing_address
@@ -69,12 +62,6 @@ module ShoppingCart
       else
         @billing_a = @order.billing_address || BillingAddress.new
       end
-
-      # begin
-      #   @billing_a = BillingAddress.find(user_info.billing_address_id)
-      # rescue NoMethodError
-      #   @billing_a = @order.billing_address || BillingAddress.new
-      # end
     end
 
     def initialize_checkout
@@ -82,12 +69,6 @@ module ShoppingCart
 
       delivery = @order.delivery
       delivery = Delivery.find(@checkout.delivery_method) if @checkout.delivery_method
-
-      # begin
-      #   delivery = Delivery.find(@checkout.delivery_method)
-      # rescue ActiveRecord::RecordNotFound
-      #   delivery = @order.delivery
-      # end
 
       @checkout.delivery_method = delivery
       @checkout.current_step = @order.aasm_state.to_sym

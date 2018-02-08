@@ -2,7 +2,6 @@ require_dependency "shopping_cart/application_controller"
 
 module ShoppingCart
   class CartsController < ApplicationController
-    # authorize_resource
     # GET /cart
     def show
     end
